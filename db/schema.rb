@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818215154) do
+ActiveRecord::Schema.define(version: 20150819005342) do
+
+  create_table "dependencies", force: :cascade do |t|
+    t.string "type"
+  end
 
   create_table "events", force: :cascade do |t|
-    t.string "name"
+    t.string   "name"
+    t.decimal  "progress"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal  "duration"
   end
 
 end
